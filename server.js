@@ -46,7 +46,7 @@ app.post('/api/notes', (req, res) => {
     newNote.id = shortid.generate();
     //Pushing the object to the db.JSON file imported at the top of this server.js file:
     noteDB.push(newNote);
-    console.log(noteDB);
+    // console.log(noteDB);
 
     let writeNote = JSON.stringify(noteDB);
     //Adding, but the db.json file has not yet been permanently changed. Need to write this to that file. To write, the opposite of parse is stringify:
@@ -60,11 +60,11 @@ app.post('/api/notes', (req, res) => {
 
   //Create a DELETE request for an item based on it's unique ID:
   app.delete('/api/notes/:id', function (req, res) {
-    console.log(req.params.id);
+    // console.log(req.params.id);
     let deleteID = req.params.id;
     //Splice out the selected id from the array in the db.json file:
     noteDB.splice(deleteID, 1);
-    console.log(noteDB);
+    // console.log(noteDB);
 
     //Write the new array to the db.json file to update it:
     fs.writeFile("Develop/db/db.json", JSON.stringify(noteDB) , (err)=>{
