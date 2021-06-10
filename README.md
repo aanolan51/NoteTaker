@@ -28,6 +28,9 @@ This app is used to write, view, and delete notes. Run the app using node in the
 A server will begin listening, and you can open the app in your browser.
 To stop the server, type in ***ctrl c*** in the terminal and hit enter.
 
+Link of application running on Heroku:
+https://online-note-taker.herokuapp.com/
+
 ![Gif of running Application](./Develop/public/assets/ApplicationNoteTaker.gif)
 
 ## License
