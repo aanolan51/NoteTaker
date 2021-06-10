@@ -62,8 +62,12 @@ app.post('/api/notes', (req, res) => {
   app.delete('/api/notes/:id', function (req, res) {
     // console.log(req.params.id);
     let deleteID = req.params.id;
+    //Find the index of the note item based on the id:
+    let index = noteDB.findIndex(db => db.id == deleteID);
+    // console.log(noteDB);
+    // console.log(index);
     //Splice out the selected id from the array in the db.json file:
-    noteDB.splice(deleteID, 1);
+    noteDB.splice(index, 1);
     // console.log(noteDB);
 
     //Write the new array to the db.json file to update it:
